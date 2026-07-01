@@ -1,0 +1,10 @@
+name: CI
+on: [pull_request]
+jobs:
+  check-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v6
+      - name: Confirm README exists
+        run: test -f README.md
